@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Search.css'
 
 export const SearchBar = () => {
     
@@ -16,7 +17,7 @@ export const SearchBar = () => {
     }
     
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="Search-component" onSubmit={handleSubmit}>
             <label className="sr-only">
                 Search
             </label>

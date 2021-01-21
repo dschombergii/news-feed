@@ -1,9 +1,10 @@
 import  SearchSelect from "./SearchSelect";
 import SearchBar from "./SearchBar";
+import './Search.css'
 
 const Search = () => {
     return (
-        <div>
+        <div className="Search">
             <SearchSelect />
             <SearchBar />
         </div>

@@ -1,0 +1,8 @@
+.Search {
+    display: flex;
+    justify-content: center;
+}
+
+.Search-component {
+    margin: 1em;
+}
