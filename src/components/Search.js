@@ -26,17 +26,9 @@ const Search = ({ searchAll, searchAuthor, searchDate }) => {
         
         searchAll({value})
         
-        passStateUp({value, select})
         // alert("You searched for: " + value);
         setValue('')
     }
-
-    // const passStateUp = (state) => {
-    //     console.log({state})
-    // }
-    // const passSearchSelectUp = (state) => {
-    //     console.log({state})
-    // }
 
     return (
         <form className="Search-component" onSubmit={handleSubmit}>
