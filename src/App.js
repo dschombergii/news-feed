@@ -58,11 +58,9 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-        <Search />
-        <div>
-          <SearchBar />
-        </div>
 
+        <Search />
+        
         <div>
           {this.state.articleList.map((article, index) => {
             return(
