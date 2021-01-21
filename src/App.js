@@ -1,15 +1,10 @@
 import React, {Component} from 'react'
-<<<<<<< HEAD
 import axios from 'axios'
 
 import './App.css'
 
 import NewsCard from './components/NewsCard'
 import SearchBar from './components/SearchBar'
-=======
-import './App.css';
-import NewsCard from './components/NewsCard'
->>>>>>> 3756507209331673aee540d9c0bcba5a83346371
 
 class App extends Component {
   constructor(props) {
@@ -62,7 +57,6 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-<<<<<<< HEAD
 
         <div>
           <SearchBar />
@@ -76,9 +70,7 @@ class App extends Component {
           })}
         </div>
         
-=======
         <NewsCard/>
->>>>>>> 3756507209331673aee540d9c0bcba5a83346371
       </div>
      )
   }
