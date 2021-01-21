@@ -28,6 +28,7 @@ const Search = ({ searchAll, searchAuthor, searchDate }) => {
         
         // alert("You searched for: " + value);
         setValue('')
+        setSelect('')
     }
 
     return (

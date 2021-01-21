@@ -11,8 +11,6 @@ class App extends Component {
     super(props);
     this.state = {
       articleList: [],
-      value: '',
-      select: '',
     }
   }
 
