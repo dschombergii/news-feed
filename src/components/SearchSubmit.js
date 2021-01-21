@@ -1,1 +1,1 @@
-export const SearchSubmit = () => <input className="Search-submit-btn" type="submit" value="Search" />
+export const SearchSubmit = () => <input className="Search-submit-btn" style={{ cursor: "pointer" }} type="submit" value="Search" />

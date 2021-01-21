@@ -1,17 +1,28 @@
 .Search {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .Search-component {
-    margin: 1em;
+	margin: 1em;
 }
 
 .sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+button:hover {
+	transform: scale(1.1, 1.1);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: black;
 }
