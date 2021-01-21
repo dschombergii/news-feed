@@ -101,7 +101,7 @@ export default function SimpleCard(props) {
         
         <CardActions>
           <Button style={{border: '1px solid green'}} size="small" onClick={handleMinimizeClick}>View Now</Button>
-          <Button style={{border: '1px solid green'}} size="small" onClick={handleHiddenClick}>Not Interested</Button>
+          <Button style={{border: '1px solid red'}} size="small" onClick={handleHiddenClick}>Not Interested</Button>
         </CardActions>
       </Card>
     )
