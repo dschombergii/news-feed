@@ -28,18 +28,17 @@ export default function SimpleCard(props) {
   const {title, url, points, author, created_at} = props
 
   return (
-    <Card style={{display: 'flex', justifyContent: 'space-around'}}className={classes.root}>
+    <Card style={{display: 'flex', justifyContent: 'space-between', margin: '10px'}}className={classes.root}>
       <CardContent style={{display: 'flex', flexDirection: 'column'}}>
-        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-          <Typography variant="h5" component="h2">
+        <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+          <Typography style={{display: 'flex', marginRight: '50px'}} variant="h5" component="h2">
           TITLE {title}
-          </Typography>
-          <Typography variant="h5" component="h2">
-          URL {url}
           </Typography>
         </div>
 
-        <div style={{display: 'flex'}}>
+        
+
+        <div style={{display: 'flex', justifyContent: 'flex-start'}}>
           <Typography style={{margin: '20px'}} className={classes.pos} color="textSecondary">
           POINTS {points}
           </Typography>
@@ -50,9 +49,17 @@ export default function SimpleCard(props) {
           CREATED_AT {created_at}
           </Typography>
         </div>
+
+        
         
         
       </CardContent>
+      <div style={{marginLeft: '5px'}}>
+        <Typography variant="h5" component="h2">
+            <a style={{fontSize: '60%'}} href={url}>URL {url}</a>
+          
+          </Typography>
+        </div>
       <CardActions>
         <Button style={{border: '1px solid red'}} size="small">View Later</Button>
         <Button style={{border: '1px solid red'}} size="small">Not Interested</Button>
