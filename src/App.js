@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './App.css';
+import NewsCard from './components/NewsCard'
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-
+        <NewsCard/>
       </div>
      )
   }
