@@ -5,7 +5,6 @@ import './App.css'
 
 import NewsCard from './components/NewsCard'
 import Search from './components/Search'
-import SearchBar from './components/SearchBar'
 
 class App extends Component {
   constructor(props) {
@@ -60,7 +59,7 @@ class App extends Component {
       <div>
 
         <Search />
-        
+
         <div>
           {this.state.articleList.map((article, index) => {
             return(
