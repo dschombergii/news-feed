@@ -4,7 +4,7 @@ import axios from 'axios'
 import './App.css'
 
 import NewsCard from './components/NewsCard'
-import SearchBar from './components/SearchBar'
+import Search from './components/Search'
 
 class App extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-
+        <Search />
         {/* <div>
           <SearchBar />
         </div>
@@ -71,9 +71,9 @@ class App extends Component {
         </div> */}
         
       </div>
-     )
+    )
   }
 }
- 
+
 export default App
 
