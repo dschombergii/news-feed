@@ -92,7 +92,11 @@ export default function SimpleCard(props) {
     return (
       <Card style={{display: 'flex', justifyContent: 'space-between', margin: '10px'}}className={classes.root}>
         <CardContent style={{display: 'flex', flexDirection: 'column'}}>
-          
+        <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+            <Typography style={{display: 'flex', marginRight: '50px'}} variant="h5" component="h2">
+            {title}
+            </Typography>
+          </div>
     
           
           
