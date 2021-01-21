@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import { SearchSubmit } from "./SearchSubmit"
 import './Search.css'
 
-const Search = ({ passStateUp, searchAll, searchAuthor, searchDate }) => {
+const Search = ({ searchAll, searchAuthor, searchDate }) => {
     const [value, setValue] = useState('')
     const [select, setSelect] = useState('All')
 

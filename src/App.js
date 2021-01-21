@@ -16,11 +16,6 @@ class App extends Component {
     }
   }
 
-  passStateUp(select, value) {
-    // this.setState({value: {value}, select: {select}})
-    console.log(select, value)
-  }
-
   // componentDidMount() {
   //   axios.get(`http://hn.algolia.com/api/v1/search?query=foo&tags=story`)
   //     .then(res => {
@@ -68,7 +63,7 @@ class App extends Component {
     return ( 
       <div style={{background: 'gray'}}>
 
-        <Search searchDate={this.searchDate} searchAuthor={this.searchAuthor} searchAll={this.searchAll} passStateUp={this.passStateUp}/>
+        <Search searchDate={this.searchDate} searchAuthor={this.searchAuthor} searchAll={this.searchAll} />
 
         <div>
           {this.state.articleList.map((article, index) => {
