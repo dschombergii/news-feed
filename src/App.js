@@ -58,7 +58,7 @@ class App extends Component {
     return ( 
       <div>
 
-        <div>
+        {/* <div>
           <SearchBar />
         </div>
 
@@ -68,9 +68,8 @@ class App extends Component {
               <NewsCard />
             )
           })}
-        </div>
+        </div> */}
         
-        <NewsCard/>
       </div>
      )
   }
