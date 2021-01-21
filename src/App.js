@@ -68,8 +68,8 @@ class App extends Component {
               <NewsCard />
             )
           })}
-        </div> */}
-        
+        </div>
+         */}
       </div>
      )
   }
