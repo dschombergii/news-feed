@@ -56,7 +56,7 @@ export default function SimpleCard(props) {
       </CardContent>
       <div style={{marginLeft: '5px'}}>
         <Typography variant="h5" component="h2">
-            <a style={{fontSize: '60%'}} href={url}>{url}</a>
+            <a style={{fontSize: '60%'}} href={url}>GO TO ARTICLE</a>
           
           </Typography>
         </div>

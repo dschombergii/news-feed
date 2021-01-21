@@ -56,7 +56,7 @@ class App extends Component {
 
   render() { 
     return ( 
-      <div>
+      <div style={{background: 'gray'}}>
 
         <Search />
 
