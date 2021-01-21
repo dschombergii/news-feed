@@ -26,17 +26,26 @@ const useStyles = makeStyles({
 export default function SimpleCard(props) {
   const classes = useStyles();
   const {title, url, points, author, created_at} = props
-  const [isVisible, setVisible] = useState(true)
+  const [isMinimized, setMinimized] = useState(false)
+  const [isHidden, setHidden] = useState(false)
 
-  function handleHiddenClick() {
-    if(isVisible) {
-      setVisible(false)
+  function handleMinimizeClick() {
+    if(!isMinimized) {
+      setMinimized(true)
     } else {
-      setVisible(true)
+      setMinimized(false)
     }
   }
 
-  if(isVisible) {
+  function handleHiddenClick() {
+    if(!isHidden) {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+  }
+
+  if(!isMinimized && !isHidden) {
     return (
       
         <Card style={{display: 'flex', justifyContent: 'space-between', margin: '10px'}}className={classes.root}>
@@ -72,14 +81,14 @@ export default function SimpleCard(props) {
             </Typography>
           </div>
         <CardActions>
-          <Button style={{border: '1px solid red'}} size="small" onClick={handleHiddenClick}>View Later</Button>
+          <Button style={{border: '1px solid red'}} size="small" onClick={handleMinimizeClick}>View Later</Button>
           <Button style={{border: '1px solid red'}} size="small" onClick={handleHiddenClick}>Not Interested</Button>
         </CardActions>
       </Card>
     )
         
     
-  } else {
+  } else if(isMinimized && !isHidden) {
     return (
       <Card style={{display: 'flex', justifyContent: 'space-between', margin: '10px'}}className={classes.root}>
         <CardContent style={{display: 'flex', flexDirection: 'column'}}>
@@ -91,10 +100,14 @@ export default function SimpleCard(props) {
         </CardContent>
         
         <CardActions>
-          <Button style={{border: '1px solid green'}} size="small" onClick={handleHiddenClick}>View Now</Button>
+          <Button style={{border: '1px solid green'}} size="small" onClick={handleMinimizeClick}>View Now</Button>
           <Button style={{border: '1px solid green'}} size="small" onClick={handleHiddenClick}>Not Interested</Button>
         </CardActions>
       </Card>
+    )
+  } else {
+    return (
+      <p></p>
     )
   }
 }
