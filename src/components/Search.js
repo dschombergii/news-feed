@@ -28,14 +28,14 @@ const Search = ({ searchAll, searchAuthor, searchDate }) => {
         
         // alert("You searched for: " + value);
         setValue('')
-        setSelect('')
+        setSelect('All')
     }
 
     return (
         <form className="Search-component" onSubmit={handleSubmit}>
         <div className="Search">
-            <SearchSelect value={value} handleSubmit={handleSubmit} handleChange={handleSelectChange} />
-            <SearchBar select={select}  handleSubmit={handleSubmit} handleChange={handleChange}/>
+            <SearchSelect select={select} handleSubmit={handleSubmit} handleChange={handleSelectChange} />
+            <SearchBar value={value} handleSubmit={handleSubmit} handleChange={handleChange}/>
             <SearchSubmit />
         </div>
         </form>
