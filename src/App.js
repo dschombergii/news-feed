@@ -24,7 +24,7 @@ class App extends Component {
   // }
 
   searchAll = ({value}) => {
-    axios.get(`http://hn.algolia.com/api/v1/search?query=${value}&tags=story`)
+    axios.get(`https://hn.algolia.com/api/v1/search?query=${value}&tags=story`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
@@ -32,8 +32,14 @@ class App extends Component {
       })
   }
 
+  // async searchAll({value}) {
+  //   const res = await fetch(`http://hn.algolia.com/api/v1/search?query=${value}&tags=story`);
+  //   const articleList = await res.data.hits;
+  //   this.setState({ articleList })
+  // }
+
   searchAuthor = ({value}) => {
-    axios.get(`http://hn.algolia.com/api/v1/search?tags=story,author_${value}`)
+    axios.get(`https://hn.algolia.com/api/v1/search?tags=story,author_${value}`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
@@ -49,7 +55,7 @@ class App extends Component {
     console.log('end date: ', endDate)
 
 
-    axios.get(`http://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=created_at_i>${startDate},created_at_i<${endDate}`)
+    axios.get(`https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=created_at_i>${startDate},created_at_i<${endDate}`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
