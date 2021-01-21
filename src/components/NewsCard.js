@@ -32,7 +32,7 @@ export default function SimpleCard(props) {
       <CardContent style={{display: 'flex', flexDirection: 'column'}}>
         <div style={{display: 'flex', justifyContent: 'flex-start'}}>
           <Typography style={{display: 'flex', marginRight: '50px'}} variant="h5" component="h2">
-          TITLE {title}
+          {title}
           </Typography>
         </div>
 
@@ -56,7 +56,7 @@ export default function SimpleCard(props) {
       </CardContent>
       <div style={{marginLeft: '5px'}}>
         <Typography variant="h5" component="h2">
-            <a style={{fontSize: '60%'}} href={url}>URL {url}</a>
+            <a style={{fontSize: '60%'}} href={url}>{url}</a>
           
           </Typography>
         </div>
