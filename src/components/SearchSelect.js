@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Search.css'
 
 
-const SearchSelect = () => {
+const SearchSelect = ({ passSearchSelectUp }) => {
     return (
         <div className="Search-component">
             <label for="searchBy">Search by:</label>
