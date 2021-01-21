@@ -4,6 +4,7 @@ import axios from 'axios'
 import './App.css'
 
 import NewsCard from './components/NewsCard'
+import Search from './components/Search'
 import SearchBar from './components/SearchBar'
 
 class App extends Component {
@@ -57,19 +58,25 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-
-        {/* <div>
+        <Search />
+        <div>
           <SearchBar />
         </div>
 
         <div>
-          {this.state.articleList.map((article, id) => {
+          {this.state.articleList.map((article, index) => {
             return(
-              <NewsCard />
+              <NewsCard 
+              key={index}
+              title={article.title}
+              url={article.url}
+              points={article.points}
+              author={article.author}
+              created_at={article.created_at}/>
             )
           })}
         </div>
-         */}
+        
       </div>
      )
   }
