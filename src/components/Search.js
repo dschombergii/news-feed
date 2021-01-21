@@ -5,9 +5,9 @@ import SearchBar from "./SearchBar";
 import { SearchSubmit } from "./SearchSubmit"
 import './Search.css'
 
-const Search = () => {
+const Search = ({ passStateUp, searchAll, searchAuthor, searchDate }) => {
     const [value, setValue] = useState('')
-    const [select, setSelect] = useState('')
+    const [select, setSelect] = useState('All')
 
     const handleChange = (e) => {
         setValue(e.target.value);
@@ -19,14 +19,21 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        {select === 'Author' && searchAuthor({value})}
+        {select === 'All' && searchAuthor({value})}
+        {select === 'Date' && searchDate({value})}
+        
+        searchAll({value})
+        
         passStateUp({value, select})
         // alert("You searched for: " + value);
         setValue('')
     }
 
-    const passStateUp = (state) => {
-        console.log({state})
-    }
+    // const passStateUp = (state) => {
+    //     console.log({state})
+    // }
     // const passSearchSelectUp = (state) => {
     //     console.log({state})
     // }

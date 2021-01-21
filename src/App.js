@@ -10,47 +10,57 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articleList: []
-     }
+      articleList: [],
+      value: '',
+      select: '',
+    }
   }
 
-  componentDidMount() {
-    axios.get(`http://hn.algolia.com/api/v1/search?query=foo&tags=story`)
+  passStateUp(select, value) {
+    // this.setState({value: {value}, select: {select}})
+    console.log(select, value)
+  }
+
+  // componentDidMount() {
+  //   axios.get(`http://hn.algolia.com/api/v1/search?query=foo&tags=story`)
+  //     .then(res => {
+  //       const articleList = res.data.hits
+  //       this.setState({ articleList })
+  //       console.log(articleList)
+  //     })
+  // }
+
+  searchAll = ({value}) => {
+    axios.get(`http://hn.algolia.com/api/v1/search?query=${value}&tags=story`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
-        console.log(articleList)
+        console.log(this.state.articleList)
       })
   }
 
-  searchAll = () => {
-    axios.get(`http://hn.algolia.com/api/v1/search?query=${this.state.value}&tags=story`)
+  searchAuthor = ({value}) => {
+    axios.get(`http://hn.algolia.com/api/v1/search?tags=story,author_${value}`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
-        console.log(articleList)
+        console.log(this.state.articleList)
       })
   }
 
-  searchAuthor = () => {
-    axios.get(`http://hn.algolia.com/api/v1/search?tags=story,author_${this.state.value}`)
-      .then(res => {
-        const articleList = res.data.hits
-        this.setState({ articleList })
-        console.log(articleList)
-      })
-  }
+  searchDate = ({value}) => {
+    let startDate = Date.parse(`${value}T00:00:00.000Z`)
+    console.log('start date: ', startDate)
 
-  searchDate = () => {
-    let startDate = Date.parse()
+    let endDate = Date.parse(`${value}T23:59:59.000Z`)
+    console.log('end date: ', endDate)
 
-    let endDate = Date.parse()
 
     axios.get(`http://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=created_at_i>${startDate},created_at_i<${endDate}`)
       .then(res => {
         const articleList = res.data.hits
         this.setState({ articleList })
-        console.log(articleList)
+        console.log(this.state.articleList)
       })
   }
 
@@ -58,7 +68,7 @@ class App extends Component {
     return ( 
       <div style={{background: 'gray'}}>
 
-        <Search />
+        <Search searchDate={this.searchDate} searchAuthor={this.searchAuthor} searchAll={this.searchAll} passStateUp={this.passStateUp}/>
 
         <div>
           {this.state.articleList.map((article, index) => {
@@ -75,9 +85,9 @@ class App extends Component {
         </div>
         
       </div>
-     )
+    )
   }
 }
- 
+
 export default App
 
